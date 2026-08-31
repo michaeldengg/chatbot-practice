@@ -27,7 +27,6 @@ List<ChatMessage> chatHistory =
             response, ask if there is anything else you can help with.
         """)
     ];
-
 // Loop to get user input and stream AI response
 while (true)
 {

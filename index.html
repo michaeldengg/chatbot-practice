@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UMC Chat App</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        
+        
+        .chat-button { position: fixed; bottom: 20px; right: 20px; background-color: #c79730; color: rgb(130, 30, 8); border: none; padding: 15px 20px; border-radius: 50px; font-size: 16px; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        
+       
+        .chat-popup { display: none; position: fixed; bottom: 80px; right: 20px; width: 320px; height: 400px; background-color: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.3); flex-direction: column; overflow: hidden; }
+        .chat-header { background-color: #642205; color: rgb(237, 200, 77); padding: 15px; font-weight: bold; }
+        .chat-messages { flex: 1; padding: 15px; overflow-y: auto; display: flex; flex-direction: column; gap: 10px; font-size: 14px; }
+        
+    
+        .msg { padding: 8px 12px; border-radius: 15px; max-width: 80%; word-wrap: break-word; }
+        .user { background-color: #def2f1; align-self: flex-end; }
+        .bot { background-color: #f1f1f1; align-self: flex-start; }
+        
+        
+        .chat-input-area { display: flex; border-top: 1px solid #ddd; padding: 10px; }
+        .chat-input-area input { flex: 1; border: 1px solid #ccc; padding: 8px; border-radius: 4px; outline: none; }
+        .chat-input-area button { background-color: #cfa834; color: white; border: none; margin-left: 5px; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to UMC CHATBOT</h1>
+    
+
+    <!-- Floating UI elements -->
+    <button class="chat-button" onclick="toggleChat()">💬 Chat</button>
+
+    <div class="chat-popup" id="chatPopup">
+        <div class="chat-header">UMC CHATBOT</div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="msg bot">Hello! I am the ChatBot for UMC website, How can I assist you today?
+        <div class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Type a message..." onkeypress="if(event.key === 'Enter') sendMessage()">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // Toggle the visibility display of the chat popup
+        function toggleChat() {
+            const popup = document.getElementById('chatPopup');
+            popup.style.display = (popup.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+    </script>
+</body>
+</html>
